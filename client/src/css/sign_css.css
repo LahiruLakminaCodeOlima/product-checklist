@@ -1,0 +1,105 @@
+.login-container{
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 80px;
+}
+.login-box{
+    margin-right: 50px;
+}
+.description-box{
+    margin-bottom: 20px;
+}
+.form-box{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px; 
+}
+.form-control{
+    padding: 8px;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    background-color: rgba(34, 218, 255, 0.1);
+}
+.or-line-box{
+    position: relative;
+}
+.forgo-password-box{
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid rgba(128, 128, 128, 0.401);
+}
+.forgo-password-link{
+    text-decoration: none;
+    color: rgb(0, 13, 255);
+    font-weight: bold;
+}
+.or-box{
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    bottom: -18px;
+    background-color: rgb(255, 255, 255) ;
+    padding:10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sign-btn{
+    margin-top:40px;
+    width:100%;
+    padding:8px;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    background-color: #36454F;
+    color: #fff;
+    font-size:15px;
+    font-weight: bold;
+}
+.account-sign-box{
+    display:flex;
+    flex-direction: column;
+    justify-content:center;
+}
+.account-sign-item{
+    margin-top:10px;
+    background-color: rgba(34, 218, 255, 0.1);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 10px;
+}
+.account-sign-image{
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    margin-right: 20px;
+}
+.sign-up-box{
+    margin-top:60px;
+    text-align: center;
+}
+.sign-up-link{
+    text-decoration: none;
+    color: blue;
+    margin-left:10px;
+}
+.bottom-text-box{
+    margin-top: 40px;
+    display: flex;
+    justify-content:center;
+}
+.bottom-text{
+    color: rgba(92, 92, 92, 0.547);
+}
+.image-box{
+    margin-left: 40px;
+}
