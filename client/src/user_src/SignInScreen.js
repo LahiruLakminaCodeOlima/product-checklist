@@ -5,7 +5,10 @@ function SignInScreen() {
     <div className="login-container">
         <div className="login-box">
             <div className="description-box">
-                <h1>Welcome Back</h1>
+                <div className="description-box-herding" >
+                    <h1>Welcome Back</h1>
+                    <img src="/slide_images/Waving_hand_emoji.PNG.png" alt="" style={{height:"30px"}} />
+                </div>
                 <p>
                     Today is a new day. It's your day. You shape it.<br/>
                     Sign in  to start managing your project.
@@ -51,8 +54,8 @@ function SignInScreen() {
                 </div>
             </div>
         </div>
-        <div className="image-box">
-            <img src="/slide_images/sign_imag.png" alt="/" style={{width:'500px'}}/>
+        <div className="login-image-box">
+            <img src="/slide_images/sign_imag.png" alt="/" style={{width:'400px', boxShadow:"10px 10px 10px 0 rgba(0,0,0,0.5}",borderRadius:"30px"}}/>
         </div>
     </div>
   )
