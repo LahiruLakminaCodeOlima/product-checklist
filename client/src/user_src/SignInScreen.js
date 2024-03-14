@@ -35,11 +35,11 @@ function SignInScreen() {
                 </form>
                 <div className="account-sign-box">
                     <div className="account-sign-item">
-                        <img src="/" alt="" className="account-sign-image"/>
+                        <img src="/slide_images/google_sign_in.png" alt="" className="account-sign-image"/>
                         <p>Sign in with Google</p>
                     </div>
                     <div className="account-sign-item">
-                        <img src="/" alt="/" className="account-sign-image"/>
+                        <img src="/slide_images/facebook_sign_in.png" alt="/" className="account-sign-image"/>
                         <p>Sign in with Facebook</p>
                     </div>
                 </div>
