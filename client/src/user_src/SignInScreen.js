@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function SignInScreen() {
   return (
@@ -18,11 +19,11 @@ function SignInScreen() {
                 <form className="form">
                     <div className="form-box">
                         <label>Email</label>
-                        <input type="text" className="form-control" placeholder="yourMale@gmail.com"/>
+                        <input type="text" className="form-control" placeholder="Example@email.com"/>
                     </div>
                     <div className="form-box">
                         <label>Password</label>
-                        <input type="password" className="form-control" placeholder="Password"/>
+                        <input type="password" className="form-control" placeholder="At least 8 characters"/>
                     </div>
                     <div className="or-line-box">
                         <div className="forgo-password-box">
@@ -47,7 +48,7 @@ function SignInScreen() {
                     </div>
                 </div>
                 <div className="sign-up-box">
-                    <p>Don't You have an account?<a href="/" className="sign-up-link">Sign up</a></p>
+                    <p>Don't You have an account?<Link to="/SignUpScreen" className="sign-up-link">Sign up</Link></p>
                 </div>
                 <div className="bottom-text-box">
                     <p className="bottom-text">&copy; 2024 All RIGHTS RESERVED</p>
@@ -55,7 +56,7 @@ function SignInScreen() {
             </div>
         </div>
         <div className="login-image-box">
-            <img src="/slide_images/sign_imag.png" alt="/" style={{width:'400px', boxShadow:"10px 10px 10px 0 rgba(0,0,0,0.5}",borderRadius:"30px"}}/>
+            <img src="/slide_images/sign_imag.png" alt="/" style={{width:'400px',borderRadius:"30px"}} className="login-image"/>
         </div>
     </div>
   )
