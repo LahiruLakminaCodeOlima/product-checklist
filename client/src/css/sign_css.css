@@ -32,32 +32,13 @@
     border-radius: 8px;
     background-color: rgba(34, 218, 255, 0.1);
 }
-.or-line-box{
-    position: relative;
-}
 .forgo-password-box{
     display: flex;
-    justify-content: flex-end;
-    padding-top: 5px;
-    padding-bottom: 20px;
-    border-bottom: 2px solid rgba(128, 128, 128, 0.401);
-}
+    justify-content: flex-end;}
 .forgo-password-link{
     text-decoration: none;
     color: rgb(0, 13, 255);
     font-weight: bold;
-}
-.or-box{
-    position: absolute;
-    left: 50%;
-    right: 50%;
-    bottom: -18px;
-    background-color: rgb(255, 255, 255) ;
-    padding:10px;
-    border-radius: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 .sign-btn{
     margin-top:40px;
@@ -70,6 +51,36 @@
     color: #fff;
     font-size:15px;
     font-weight: bold;
+}
+.or-line-box{
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.or-box{
+    position: absolute;
+    left: 45%;
+    right: 50%;
+    bottom: 50%;
+    top: 23%;
+    background-color: rgb(255, 255, 255) ;
+    padding:10px;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.or-line{
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 50%;
+    bottom: 50%;
+    top: 50%;
+    background-color: rgba(0, 0, 0, 0.2);
+    width: 100%;
+    height: 1px;
+    border-radius: 10px;
 }
 .account-sign-box{
     display:flex;

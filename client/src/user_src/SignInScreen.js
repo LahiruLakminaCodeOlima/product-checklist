@@ -25,16 +25,20 @@ function SignInScreen() {
                         <label>Password</label>
                         <input type="password" className="form-control" placeholder="At least 8 characters"/>
                     </div>
-                    <div className="or-line-box">
-                        <div className="forgo-password-box">
-                            <a href="/" className="forgo-password-link">Forgot Password?</a>
-                        </div>
-                        <div  className="or-box">
-                            <p>Or</p>
-                        </div>
+                    <div className="forgo-password-box">
+                        <a href="/" className="forgo-password-link">Forgot Password?</a>
                     </div>
                     <div>
                         <input type="submit" value="SIGN IN" className="sign-btn"/>
+                    </div>
+                    <div>
+                        <div className="or-line-box">
+                           <div className="or-line">
+                           </div>
+                            <div  className="or-box">
+                              <p>Or</p>
+                           </div>
+                        </div>
                     </div>
                 </form>
                 <div className="account-sign-box">
