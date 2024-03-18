@@ -8,26 +8,41 @@ function WallpaperScreen() {
         <div className="wallpaper-content">
             <img src="/" alt="" className="main-image"/>
             <div className="checklist-content">
-                <div className="checklist-item">
+                <div className="checklist-item checklist-item-small">
                     <p>a</p>
                 </div>
-                <div className="checklist-item">
-                    <p>b</p>
+                <div className="checklist-item checklist-item-medium">
+                    <p>a</p>
                 </div>
-                <div className="checklist-item">
-                    <p>c</p>
+                <div className="checklist-item checklist-item-large">
+                    <p>a</p>
                 </div>
-                <div className="checklist-item">
-                    <p>d</p>
+                <div className="checklist-item checklist-item-very-large">
+                    <p>a</p>
                 </div>
-                <div className="checklist-item" style={{height:'100px'}}>
-                    <p>f</p>
+                <div className="checklist-item checklist-item-small">
+                    <p>a</p>
                 </div>
-                <div className="checklist-item">
-                    <p>d</p>
+                <div className="checklist-item checklist-item-medium">
+                    <p>a</p>
                 </div>
-                <div className="checklist-item">
-                    <p>d</p>
+                <div className="checklist-item checklist-item-large">
+                    <p>a</p>
+                </div>
+                <div className="checklist-item checklist-item-very-large">
+                    <p>a</p>
+                </div>
+                <div className="checklist-item checklist-item-small">
+                    <p>a</p>
+                </div>
+                <div className="checklist-item checklist-item-medium">
+                    <p>a</p>
+                </div>
+                <div className="checklist-item checklist-item-large">
+                    <p>a</p>
+                </div>
+                <div className="checklist-item checklist-item-very-large">
+                    <p>a</p>
                 </div>
             </div>
         </div>

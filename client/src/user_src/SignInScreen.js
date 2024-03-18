@@ -1,7 +1,24 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios' 
+import { useNavigate } from 'react-router-dom';
 
 function SignInScreen() {
+    const navigate = useNavigate();
+    const [showUserDetails, setUserDetails] = useState({email:'', password:''})
+
+    function handleSubmit(e){
+        e.preventDefault()
+        console.log("run", showUserDetails.email);
+        axios.post('http://localhost:3001/api/v1/users', {...showUserDetails})
+        .then(res=>{
+            console.log(res);
+            if(res.data === "Success")
+            {
+                navigate('/WallpaperScreen')
+            }
+        }).catch(err=>console.log(err));
+    }
   return (
     <div className="login-container">
         <div className="login-box">
@@ -16,14 +33,31 @@ function SignInScreen() {
                 </p>
             </div>
             <div>
-                <form className="form">
+                <form className="from-group form needs-validation" onSubmit={handleSubmit}>
                     <div className="form-box">
-                        <label>Email</label>
-                        <input type="text" className="form-control" placeholder="Example@email.com"/>
+                        <label htmlFor="email" className='form-label'>Email</label>
+                        <input 
+                            type="text"
+                            name="email"
+                            className="form-control"
+                            placeholder="Example@email.com"
+                            required
+                            onChange={e=>setUserDetails({...showUserDetails, email: e.target.value})}
+                        />
+                        <div className="invalid-feedback">
+                            Please Enter Your Email
+                        </div>
                     </div>
                     <div className="form-box">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="At least 8 characters"/>
+                        <label htmlFor="firstName" className='form-label'>Password</label>
+                        <input
+                            type="password"
+                            name="firstName"
+                            className="form-control"
+                            placeholder="At least 8 characters"
+                            required
+                            onChange={(e)=>setUserDetails({...showUserDetails, password: e.target.value})}
+                        />
                     </div>
                     <div className="forgo-password-box">
                         <a href="/" className="forgo-password-link">Forgot Password?</a>
@@ -60,7 +94,7 @@ function SignInScreen() {
             </div>
         </div>
         <div className="login-image-box">
-            <img src="/slide_images/sign_imag.png" alt="/" style={{width:'400px',borderRadius:"30px"}} className="login-image"/>
+            <img src="/slide_images/sign_imag.png" alt="/" className="login-image"/>
         </div>
     </div>
   )

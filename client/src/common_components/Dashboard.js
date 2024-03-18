@@ -1,6 +1,14 @@
 import React from 'react'
-
+import { Link, useResolvedPath, useMatch} from 'react-router-dom';
 function Dashboard() {
+    
+    // const location = useLocation();
+    // const [fileName, setFileName] = useState(location.pathname)
+    // useEffect(()=>{
+    //     setFileName(location.pathname);
+    // },[location.pathname])
+
+    // console.log(fileName); 
   return (
     <div>
         <nav className="nav-bar">
@@ -14,14 +22,26 @@ function Dashboard() {
             </div>
             <div className='nav-bar-bottom'>
                 <ul className="nav-bar-bottom-item">
-                    <li className="nav-bar-link-item link-item-animation link-item-active"><a href="/" className="nav-bar-link">Wallpaper</a></li>
-                    <li className="nav-bar-link-item link-item-animation link-item-animation-work link-item-active"><a href="/" className="nav-bar-link">Animations</a></li>
+                    <CustomLink to="/WallpaperScreen">Wallpaper</CustomLink>
+                    <CustomLink to="/AnimationsScreen">Animations</CustomLink>
                     <li><a href="/" className="nav-bar-link">Notifications</a></li>
+                    
                 </ul>
             </div>
         </nav>
+        {/* <p>{fileName}</p> */}
     </div>
   )
 }
 
 export default Dashboard
+
+function CustomLink({path, children, ...props}) {
+        const resolvedPath=useResolvedPath(path)
+        const isActive = useMatch({path: resolvedPath.pathname, end: true})
+    return (
+        <li className={`nav-bar-link-item link-item-animation  ${isActive === path ?"link-item-active":''} link-item-animation-work`}>
+            <Link to='' className="nav-bar-link" {...props}>{children}</Link>
+        </li>
+    )
+}

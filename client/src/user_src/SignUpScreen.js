@@ -1,7 +1,30 @@
-import React from 'react'
+import React, { useState }  from 'react'
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function SignUpScreen() {
-  return (
+    const [formValues, setFormValues] = useState([{first_name:'',last_name:'',email:'',password:''}]);
+    const [rePassword, setRePassword] = useState();
+    const[errorMassage, setErrorMassage] = useState('');
+    const navigate = useNavigate();
+
+    function handleSubmit (e){
+        console.log(formValues.first_name)
+        e.preventDefault();
+        if(formValues.password===rePassword){
+            console.log(formValues.last_name)
+            axios.post('http://localhost:3001/api/v1/usersNew',{...formValues})
+            .then(res=>{
+                console.log(res);
+                navigate('/')
+            }).catch(err=>console.log(err));
+        }
+        else{
+            setRePassword('');
+            setErrorMassage("Password is worn Reenter password!")
+        }
+    }
+    return (
     <div className="login-container">
         <div className="register-image-box">
             <img src="/slide_images/sign_imag.png" alt="/" style={{width:'400px',borderRadius:"30px"}} className="register-image"/>
@@ -15,26 +38,65 @@ function SignUpScreen() {
                 </p>
             </div>
             <div>
-                <form className="form">
+                <form className="from-group form needs-validation" onSubmit={handleSubmit}>
                     <div className="form-box">
-                        <label>First Name</label>
-                        <input type="text" className="form-control" placeholder="Enter Your First Name"/>
+                        <label htmlFor="firstName" className="form-label">First Name</label>
+                        <input
+                            type="text"
+                            name="first_Name"
+                            id="first_Name"
+                            className="form-control"
+                            placeholder="Enter Your First Name"
+                            required
+                           onChange={(e)=>{setFormValues({...formValues, first_name:e.target.value})}}
+                        />
                     </div>
                     <div className="form-box">
-                        <label>Last Name</label>
-                        <input type="text" className="form-control" placeholder="Enter Your Last Name"/>
+                        <label htmlFor="lastName">Last Name</label>
+                        <input
+                            type="text"
+                            name="lastName"
+                            className="form-control"
+                            placeholder="Enter Your Last Name"
+                            required
+                            onChange={(e)=>{setFormValues({...formValues, last_name:e.target.value})}}
+                        />
                     </div>
                     <div className="form-box">
-                        <label>Email</label>
-                        <input type="email" className="form-control" placeholder="Example@email.com"/>
+                        <label htmlFor="email">Email</label>
+                        <input
+                            type="email"
+                            name="email"
+                            className="form-control"
+                            placeholder="Example@email.com"
+                            required
+                            onChange={(e)=>{setFormValues({...formValues, email:e.target.value})}}
+                        />
                     </div>
                     <div className="form-box">
-                        <label>Password</label>
-                        <input type="password" className="form-control" placeholder="At least 8 characters"/>
+                        <label htmlFor="password">Password</label>
+                        <input 
+                            type="password" 
+                            name="password"
+                            className="form-control" 
+                            placeholder="At least 8 characters"
+                            required
+                            onChange={(e)=>{setFormValues({...formValues, password: e.target.value})}}
+                        />
                     </div>
                     <div className="form-box">
-                        <label>Re Enter Password</label>
-                        <input type="password" className="form-control" placeholder="At least 8 characters"/>
+                        <label htmlFor="reEnterPassword">Re Enter Password</label>
+                        <input
+                            type="password"
+                            name="reEnterPassword"
+                            className="form-control"
+                            placeholder="At least 8 characters"
+                            required
+                            onChange={(e)=>{setRePassword(e.target.value)}}
+                        />
+                        <div style={{color:"red"}}>
+                        {errorMassage}
+                        </div>
                     </div>
                     <div>
                         <input type="submit" value="SIGN UP" className="sign-btn"/>
