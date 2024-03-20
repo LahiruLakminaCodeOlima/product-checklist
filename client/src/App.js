@@ -13,9 +13,9 @@ function App() {
     <div className="app">
       <Routes>
         <Route path="/" element={<SignInScreen/>}/>
-        <Route path="/SignUpScreen" element={<SignUpScreen/>}/>
-        <Route path="/WallpaperScreen" element={<WallpaperScreen/>}/>
-        <Route path="/AnimationsScreen" element={<AnimationsScreen/>}/>
+        <Route path="/sign-up-screen" element={<SignUpScreen/>}/>
+        <Route path="/wallpaper-screen" element={<WallpaperScreen/>}/>
+        <Route path="/animations-screen" element={<AnimationsScreen/>}/>
       </Routes>
     </div>
   );

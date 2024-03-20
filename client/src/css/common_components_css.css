@@ -1,5 +1,9 @@
 .nav-bar{
-    background-color: rgb(255, 255, 255);
+    background-image: url(../../public/slide_images/search-box-background.png);
+    background-position:"center";
+    background-attachment:"fixed"; 
+    background-size:"cover"; 
+    background-repeat:"no-repeat";
     padding: 20px 20px;
     display: flex;
     flex-direction: column;

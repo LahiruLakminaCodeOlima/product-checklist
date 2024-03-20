@@ -9,13 +9,15 @@ function SignInScreen() {
 
     function handleSubmit(e){
         e.preventDefault()
-        console.log("run", showUserDetails.email);
         axios.post('http://localhost:3001/api/v1/users', {...showUserDetails})
         .then(res=>{
-            console.log(res);
             if(res.data === "Success")
             {
-                navigate('/WallpaperScreen')
+                navigate('/wallpaper-screen')
+            }
+            else
+            {
+                console.log(res.data);
             }
         }).catch(err=>console.log(err));
     }
@@ -86,7 +88,7 @@ function SignInScreen() {
                     </div>
                 </div>
                 <div className="sign-up-box">
-                    <p>Don't You have an account?<Link to="/SignUpScreen" className="sign-up-link">Sign up</Link></p>
+                    <p>Don't You have an account?<Link to="/sign-up-screen" className="sign-up-link">Sign up</Link></p>
                 </div>
                 <div className="bottom-text-box">
                     <p className="bottom-text">&copy; 2024 All RIGHTS RESERVED</p>

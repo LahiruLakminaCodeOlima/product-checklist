@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 const app = express();
 
-const models = require('./models');
+const Wallpaper = require('./models/wallpapersModels');
+const Animation = require('./models/animationModels');
 const User = require('./models');
 
 app.use(cors());
@@ -50,7 +51,29 @@ app.post('/api/v1/usersNew', (req, res)=>{
     .catch(err=>err.json(err))
 })
 
+app.get('/api/v1/wallpapers', async (req, res)=>{
+    
+    try{
+        const data = await Wallpaper.find();
+        res.json(data)
+    }
+    catch(err)
+    {
+        res.json(err)
+    }
+});
 
+app.get('/api/v1/animation', async (req, res)=>{
+    
+    try{
+        const data = await Animation.find();
+        res.json(data)
+    }
+    catch(err)
+    {
+        res.json(err)
+    }
+})
 
 app.listen(PORT, () => {
     console.log(`Server listening on ${PORT}`);

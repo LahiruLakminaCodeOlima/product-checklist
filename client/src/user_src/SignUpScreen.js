@@ -12,7 +12,6 @@ function SignUpScreen() {
         console.log(formValues.first_name)
         e.preventDefault();
         if(formValues.password===rePassword){
-            console.log(formValues.last_name)
             axios.post('http://localhost:3001/api/v1/usersNew',{...formValues})
             .then(res=>{
                 console.log(res);

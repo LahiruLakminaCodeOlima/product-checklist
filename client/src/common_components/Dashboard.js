@@ -22,9 +22,9 @@ function Dashboard() {
             </div>
             <div className='nav-bar-bottom'>
                 <ul className="nav-bar-bottom-item">
-                    <CustomLink to="/WallpaperScreen">Wallpaper</CustomLink>
-                    <CustomLink to="/AnimationsScreen">Animations</CustomLink>
-                    <li><a href="/" className="nav-bar-link">Notifications</a></li>
+                    <CustomLink to="/wallpaper-screen">Wallpaper</CustomLink>
+                    <CustomLink to="/animations-screen">Animations</CustomLink>
+                    <li><Link to="/notification-screen" className="nav-bar-link">Notifications</Link></li>
                     
                 </ul>
             </div>
