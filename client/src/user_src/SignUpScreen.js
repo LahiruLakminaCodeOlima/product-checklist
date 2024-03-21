@@ -9,10 +9,9 @@ function SignUpScreen() {
     const navigate = useNavigate();
 
     function handleSubmit (e){
-        console.log(formValues.first_name)
         e.preventDefault();
         if(formValues.password===rePassword){
-            axios.post('http://localhost:3001/api/v1/usersNew',{...formValues})
+            axios.post('http://localhost:3001/api/v1/users/new',{...formValues})
             .then(res=>{
                 console.log(res);
                 navigate('/')

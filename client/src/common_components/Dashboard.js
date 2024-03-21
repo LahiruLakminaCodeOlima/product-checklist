@@ -1,14 +1,6 @@
 import React from 'react'
 import { Link, useResolvedPath, useMatch} from 'react-router-dom';
 function Dashboard() {
-    
-    // const location = useLocation();
-    // const [fileName, setFileName] = useState(location.pathname)
-    // useEffect(()=>{
-    //     setFileName(location.pathname);
-    // },[location.pathname])
-
-    // console.log(fileName); 
   return (
     <div>
         <nav className="nav-bar">
@@ -25,11 +17,9 @@ function Dashboard() {
                     <CustomLink to="/wallpaper-screen">Wallpaper</CustomLink>
                     <CustomLink to="/animations-screen">Animations</CustomLink>
                     <li><Link to="/notification-screen" className="nav-bar-link">Notifications</Link></li>
-                    
                 </ul>
             </div>
         </nav>
-        {/* <p>{fileName}</p> */}
     </div>
   )
 }
